@@ -1,0 +1,91 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.125rem 0.6rem 0.125rem 0.45rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--cd-radius-pill);
+  font-size: var(--cd-text-xs);
+  font-weight: var(--cd-weight-strong);
+  line-height: 1.35;
+  white-space: nowrap;
+  background: var(--cd-color-sheet-sunk);
+  color: var(--cd-color-ink);
+}
+
+/* Without an icon the left padding matches the right. */
+.badge:not(:has(svg)) {
+  padding-inline-start: 0.6rem;
+}
+
+.badge[data-tone="extracted"] {
+  background: var(--cd-prov-extracted-bg);
+  color: var(--cd-prov-extracted-fg);
+}
+
+.badge[data-tone="needs-review"] {
+  background: var(--cd-prov-review-bg);
+  border-color: var(--cd-prov-review-rule);
+  color: var(--cd-prov-review-fg);
+}
+
+.badge[data-tone="confirmed"] {
+  background: var(--cd-prov-confirmed-bg);
+  color: var(--cd-prov-confirmed-fg);
+}
+
+.badge[data-tone="corrected"] {
+  background: var(--cd-prov-corrected-bg);
+  color: var(--cd-prov-corrected-fg);
+}
+
+.badge[data-tone="provider-confirmed"] {
+  background: var(--cd-prov-provider-bg);
+  color: var(--cd-prov-provider-fg);
+}
+
+.badge[data-tone="paypal-confirmed"] {
+  background: var(--cd-prov-paypal-bg);
+  color: var(--cd-prov-paypal-fg);
+}
+
+.badge[data-tone="payable"] {
+  background: var(--cd-bucket-payable-bg);
+  color: var(--cd-bucket-payable-fg);
+}
+
+.badge[data-tone="queried"] {
+  background: var(--cd-bucket-queried-bg);
+  color: var(--cd-bucket-queried-fg);
+}
+
+.badge[data-tone="paid"] {
+  background: var(--cd-bucket-paid-bg);
+  color: var(--cd-bucket-paid-fg);
+}
+
+.badge[data-tone="info"] {
+  background: var(--cd-feedback-info-bg);
+  color: var(--cd-feedback-info-fg);
+}
+
+.badge[data-tone="success"] {
+  background: var(--cd-feedback-success-bg);
+  color: var(--cd-feedback-success-fg);
+}
+
+.badge[data-tone="warning"] {
+  background: var(--cd-feedback-warning-bg);
+  color: var(--cd-feedback-warning-fg);
+}
+
+.badge[data-tone="error"] {
+  background: var(--cd-feedback-error-bg);
+  color: var(--cd-feedback-error-fg);
+}
+
+@media (forced-colors: active) {
+  .badge {
+    border-color: CanvasText;
+  }
+}

@@ -1,0 +1,138 @@
+/*
+ * CareDirect design tokens. One source of truth for every phase; see web/DESIGN.md.
+ *
+ * Direction: a cool, pharmacy-glass ground, deep teal ink, and one loud signal: the marigold
+ * highlighter. Marigold means "a person must look at this" and nothing else. Sans type speaks
+ * for the app; serif type is reserved for words and numbers that come off the paper document.
+ *
+ * Contrast (WCAG 2.2 AA): every text/background pair below is >= 4.5:1, and every control edge
+ * and focus ring is >= 3:1 against the surfaces it sits on. Figures are recorded in DESIGN.md.
+ */
+:root {
+  color-scheme: light;
+  --cd-color-sidebar: #183248;
+  --cd-color-sidebar-muted: #c3d1e0;
+  --cd-color-sidebar-rule: #345068;
+  --cd-color-sidebar-active: #3157a6;
+  --cd-chart-blue: #4669b2;
+  --cd-chart-teal: #278078;
+  --cd-chart-purple: #835fa8;
+  --cd-chart-slate: #59758d;
+
+  /* ---- Surfaces ---- */
+  --cd-color-ground: #eef2f7;
+  --cd-color-sheet: #ffffff;
+  --cd-color-sheet-sunk: #e7eeed;
+  --cd-color-rule: #cbd6d4; /* decorative separators only */
+  --cd-color-edge: #5d767e; /* borders of inputs and other essential UI (>= 3:1) */
+
+  /* ---- Text ---- */
+  --cd-color-ink: #12303a;
+  --cd-color-ink-muted: #3f5760;
+  --cd-color-ink-inverse: #ffffff;
+
+  /* ---- Action and focus ---- */
+  --cd-color-action: #23408f;
+  --cd-color-action-hover: #1a3274;
+  --cd-color-action-wash: #e4eaf8;
+  --cd-color-focus: #1b5bd8;
+  --cd-focus-ring: 3px solid var(--cd-color-focus);
+  --cd-focus-offset: 2px;
+
+  /* ---- Provenance: where a value came from and what a person has done to it ---- */
+  --cd-prov-extracted-fg: #34505a;
+  --cd-prov-extracted-bg: #e6edec;
+  --cd-prov-review-fg: #5c3c00;
+  --cd-prov-review-bg: #fff0bf;
+  --cd-prov-review-mark: #ffd966; /* the highlighter wash */
+  --cd-prov-review-rule: #b07900; /* the highlighter edge (>= 3:1 on sheet and on the wash) */
+  --cd-prov-confirmed-fg: #0b5a3b;
+  --cd-prov-confirmed-bg: #ddf3e8;
+  --cd-prov-corrected-fg: #5e2682;
+  --cd-prov-corrected-bg: #f0e4f8;
+  --cd-prov-provider-fg: #0b5663;
+  --cd-prov-provider-bg: #d7eff3;
+  --cd-prov-paypal-fg: #17407e;
+  --cd-prov-paypal-bg: #dce8fa;
+
+  /* ---- The three buckets ---- */
+  --cd-bucket-payable-fg: #0b5a3b;
+  --cd-bucket-payable-bg: #ddf3e8;
+  --cd-bucket-queried-fg: #8a3406;
+  --cd-bucket-queried-bg: #fde5d6;
+  --cd-bucket-paid-fg: #2b4570;
+  --cd-bucket-paid-bg: #e0e9f6;
+
+  /* ---- Feedback ---- */
+  --cd-feedback-info-fg: #1b4a73;
+  --cd-feedback-info-bg: #e1eef8;
+  --cd-feedback-info-edge: #4f86b3;
+  --cd-feedback-success-fg: #0b5a3b;
+  --cd-feedback-success-bg: #ddf3e8;
+  --cd-feedback-success-edge: #3f9a74;
+  --cd-feedback-warning-fg: #5c3c00;
+  --cd-feedback-warning-bg: #fff0bf;
+  --cd-feedback-warning-edge: #b07900;
+  --cd-feedback-error-fg: #8f1d1d;
+  --cd-feedback-error-bg: #fce3e3;
+  --cd-feedback-error-edge: #c25454;
+
+  /* ---- Type ---- */
+  --cd-font-sans:
+    "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible Next", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --cd-font-paper: "Literata Variable", Literata, Georgia, "Times New Roman", serif;
+
+  --cd-text-xs: 0.8125rem; /* 13px: badges only */
+  --cd-text-sm: 0.875rem; /* 14px: metadata */
+  --cd-text-md: 1rem; /* 16px: body */
+  --cd-text-lg: 1.125rem;
+  --cd-text-xl: 1.375rem;
+  --cd-text-2xl: 1.75rem;
+  --cd-text-3xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
+
+  --cd-leading-tight: 1.2;
+  --cd-leading-body: 1.55;
+  --cd-leading-paper: 1.6; /* serif text gets more air than sans */
+
+  --cd-weight-regular: 420;
+  --cd-weight-strong: 650;
+  --cd-weight-heading: 760;
+
+  --cd-measure: 68ch; /* maximum line length for running text */
+
+  /* ---- Space (4px base) ---- */
+  --cd-space-1: 0.25rem;
+  --cd-space-2: 0.5rem;
+  --cd-space-3: 0.75rem;
+  --cd-space-4: 1rem;
+  --cd-space-5: 1.5rem;
+  --cd-space-6: 2rem;
+  --cd-space-7: 3rem;
+  --cd-space-8: 4.5rem;
+
+  /* ---- Shape: radius follows role, not one value for everything ---- */
+  --cd-radius-control: 0.375rem;
+  --cd-radius-surface: 0.625rem;
+  --cd-radius-pill: 999px;
+
+  /* ---- Elevation: one lifted level, used for the decision panel only ---- */
+  --cd-shadow-lift: 0 1px 0 rgb(18 48 58 / 0.06), 0 14px 28px -16px rgb(18 48 58 / 0.34);
+
+  /* ---- Layout ---- */
+  --cd-width-page: 78rem;
+  --cd-width-narrow: 42rem;
+  --cd-gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+
+  /* ---- Motion ---- */
+  --cd-duration-fast: 120ms;
+  --cd-duration-base: 220ms;
+  --cd-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cd-duration-fast: 0.01ms;
+    --cd-duration-base: 0.01ms;
+  }
+}

@@ -1,0 +1,114 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-5);
+  max-width: var(--cd-width-narrow);
+  margin-inline: auto;
+}
+
+.lead {
+  font-size: var(--cd-text-lg);
+}
+.page .form { border-top:4px solid var(--cd-color-action); padding:1.75rem; }
+.page { padding:1.75rem 0; max-width:46rem; }
+.form { padding:1.75rem; border-top:4px solid var(--cd-color-action); box-shadow:0 10px 35px rgb(24 50 72 / 6%); }
+.form input[type=file] { padding:2rem 1rem; background:var(--cd-feedback-info-bg); border:2px dashed var(--cd-feedback-info-edge); border-radius:10px; min-height:110px; }
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--cd-space-2) var(--cd-space-5);
+  margin: 0;
+  padding: var(--cd-space-4) 0;
+  border-block: 1px solid var(--cd-color-rule);
+}
+
+.facts dt {
+  font-weight: var(--cd-weight-strong);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--cd-color-ink);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-4);
+  padding: var(--cd-space-5);
+  border: 1px solid var(--cd-color-rule);
+  border-radius: var(--cd-radius-surface);
+  background: var(--cd-color-sheet);
+}
+
+.remaining {
+  font-weight: var(--cd-weight-strong);
+}
+
+.file {
+  width: 100%;
+  padding: var(--cd-space-5) var(--cd-space-4);
+  border: 2px dashed var(--cd-color-edge);
+  border-radius: var(--cd-radius-surface);
+  background: var(--cd-color-ground);
+  cursor: pointer;
+}
+
+.file::file-selector-button {
+  margin-right: var(--cd-space-3);
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--cd-color-action);
+  border-radius: var(--cd-radius-control);
+  background: var(--cd-color-sheet);
+  color: var(--cd-color-action);
+  font: inherit;
+  font-weight: var(--cd-weight-strong);
+  cursor: pointer;
+}
+
+.submitRow {
+  display: flex;
+}
+
+.feedback:empty {
+  display: none;
+}
+
+.privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cd-space-3);
+  color: var(--cd-color-ink-muted);
+  font-size: var(--cd-text-sm);
+}
+
+.privacy svg {
+  margin-top: 0.1rem;
+}
+
+.skeleton {
+  height: 2rem;
+  max-width: 18rem;
+  border-radius: var(--cd-radius-control);
+  background: var(--cd-color-sheet-sunk);
+}
+
+@media (max-width: 34rem) {
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .facts dd {
+    margin-bottom: var(--cd-space-2);
+  }
+
+  .form {
+    padding: var(--cd-space-4);
+  }
+
+  .submitRow > * {
+    width: 100%;
+  }
+}

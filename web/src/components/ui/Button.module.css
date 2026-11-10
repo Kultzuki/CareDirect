@@ -1,0 +1,81 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cd-space-2);
+  min-height: 2.75rem;
+  padding: 0.5rem 1.15rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--cd-radius-control);
+  font: inherit;
+  font-weight: var(--cd-weight-strong);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--cd-duration-fast) var(--cd-ease),
+    border-color var(--cd-duration-fast) var(--cd-ease);
+}
+
+.full {
+  width: 100%;
+}
+
+.primary {
+  background: var(--cd-color-action);
+  color: var(--cd-color-ink-inverse);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--cd-color-action-hover);
+  color: var(--cd-color-ink-inverse);
+}
+
+.secondary {
+  background: var(--cd-color-sheet);
+  border-color: var(--cd-color-action);
+  color: var(--cd-color-action);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--cd-color-action-wash);
+  color: var(--cd-color-action-hover);
+}
+
+.quiet {
+  background: transparent;
+  color: var(--cd-color-action);
+}
+
+.quiet:hover:not(:disabled) {
+  background: var(--cd-color-action-wash);
+  color: var(--cd-color-action-hover);
+}
+
+.button:disabled {
+  background: var(--cd-color-sheet-sunk);
+  border-color: var(--cd-color-edge);
+  border-style: dashed;
+  color: var(--cd-color-ink-muted);
+  cursor: not-allowed;
+}
+
+.pending:disabled {
+  cursor: progress;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

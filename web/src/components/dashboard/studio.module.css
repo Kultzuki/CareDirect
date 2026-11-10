@@ -1,0 +1,15 @@
+.view { display: grid; gap: var(--cd-space-3); min-width: 0; }
+.view label { font-weight: var(--cd-weight-strong); }
+.view select { max-width: 24rem; min-height: 44px; }
+.view > p { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); max-width: var(--cd-measure); }
+.canvas { width: 100%; min-width: 0; height: 900px; border: 1px solid var(--cd-color-rule); border-radius: var(--cd-radius-surface); overflow: hidden; }
+.exactTotals { padding: var(--cd-space-4); overflow: auto; height: 100%; }
+.exactTotals h2 { font-size: var(--cd-text-lg); }
+.exactTotals > p { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); margin-block: var(--cd-space-2); }
+.exactCurrency { border-top: 1px solid var(--cd-color-rule); padding-top: var(--cd-space-3); margin-top: var(--cd-space-3); }
+.exactCurrency h3 { font-size: var(--cd-text-sm); }
+.exactCurrency dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--cd-space-3); }
+.exactCurrency dt { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); }
+.exactCurrency dd { margin: var(--cd-space-1) 0 0; font-size: var(--cd-text-xl); }
+@media(max-width:540px) { .exactCurrency dl { grid-template-columns: minmax(0,1fr); } .exactCurrency dl > div { display: flex; justify-content: space-between; gap: var(--cd-space-2); align-items: baseline; } }
+@media(max-width:540px) { .canvas { height: 1000px; } }

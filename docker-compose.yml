@@ -1,0 +1,22 @@
+# Local development only. Credentials below are dev-only placeholders, not secrets.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: caredirect-db
+    environment:
+      POSTGRES_USER: caredirect
+      POSTGRES_PASSWORD: caredirect_dev_only
+      POSTGRES_DB: caredirect
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - caredirect_pg:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caredirect -d caredirect"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  caredirect_pg:

@@ -1,0 +1,42 @@
+.dashboard { display: grid; gap: var(--cd-space-7); }
+.dashboard .balances { border-top:3px solid var(--cd-color-action); }
+.dashboard .filters button { border-radius:20px; }
+.balances { border-top:3px solid var(--cd-color-action); }
+.buckets > div { background:var(--cd-color-ground); border-radius:8px; padding:1rem; }
+.caseList { overflow:hidden; }
+.caseRow { transition:background .15s; }
+.caseRow:hover { background:var(--cd-feedback-info-bg); }
+.caseRow h3 { font-size:1.1rem; }
+.filters button { border-radius:20px; font-size:.88rem; }
+@media(prefers-reduced-motion:reduce) { .caseRow { transition:none; } }
+.sectionHead { display: grid; gap: var(--cd-space-1); margin-bottom: var(--cd-space-4); }
+.sectionHead h2 { font-size: var(--cd-text-xl); }
+.sectionHead p, .muted, .review, .result { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); }
+.balances { padding: var(--cd-space-5); border: 1px solid var(--cd-color-rule); border-radius: var(--cd-radius-surface); background: var(--cd-color-sheet); }
+.currency { border-top: 1px solid var(--cd-color-rule); padding-top: var(--cd-space-4); }
+.currency + .currency { margin-top: var(--cd-space-5); }
+.currency h3 { font-size: var(--cd-text-sm); margin-bottom: var(--cd-space-2); }
+.buckets { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--cd-space-4); }
+.buckets dt, .caseAmounts dt { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); }
+.buckets dd { font-size: var(--cd-text-2xl); margin: var(--cd-space-1) 0 0; }
+.review { margin-top: var(--cd-space-3); }
+.filters { display: flex; flex-wrap: wrap; gap: var(--cd-space-2); }
+.filters button { min-height: 44px; padding: var(--cd-space-2) var(--cd-space-4); border: 1px solid var(--cd-color-edge); border-radius: var(--cd-radius-control); background: var(--cd-color-sheet); color: var(--cd-color-action); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--cd-color-action); color: var(--cd-color-ink-inverse); border-color: var(--cd-color-action); }
+.result { margin-block: var(--cd-space-3); }
+.caseList { margin: 0; padding: 0; list-style: none; border: 1px solid var(--cd-color-rule); border-radius: var(--cd-radius-surface); background: var(--cd-color-sheet); }
+.caseRow { display: grid; grid-template-columns: minmax(0,1fr) minmax(220px,1fr) minmax(180px,.8fr); gap: var(--cd-space-5); padding: var(--cd-space-5); }
+.caseRow + .caseRow { border-top: 1px solid var(--cd-color-rule); }
+.identity, .next { min-width: 0; display: grid; justify-items: start; align-content: start; gap: var(--cd-space-1); overflow-wrap: anywhere; }
+.identity h3 { font-size: var(--cd-text-lg); }
+.identity h3 a { display: inline-flex; min-height: 44px; align-items: center; }
+.caseAmounts { display: grid; gap: var(--cd-space-2); align-content: start; }
+.caseAmounts > div { display: flex; gap: var(--cd-space-3); justify-content: space-between; align-items: baseline; }
+.caseAmounts dd { margin: 0; text-align: end; }
+.next a { display: inline-flex; align-items: center; min-height: 32px; }
+.pagination { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--cd-space-3); margin-top: var(--cd-space-4); }
+.pagination button { min-height: 44px; padding: var(--cd-space-2) var(--cd-space-3); background: var(--cd-color-sheet); color: var(--cd-color-action); border: 1px solid var(--cd-color-edge); border-radius: var(--cd-radius-control); cursor: pointer; }
+.pagination button:disabled { color: var(--cd-color-ink-muted); cursor: default; border-style: dashed; }
+.pagination p { font-size: var(--cd-text-sm); color: var(--cd-color-ink-muted); }
+@media (max-width: 900px) { .caseRow { grid-template-columns: minmax(0,1fr) minmax(0,1fr); } .next { grid-column: 1/-1; display: flex; flex-wrap: wrap; gap: var(--cd-space-2) var(--cd-space-5); } }
+@media (max-width: 540px) { .balances, .caseRow { padding: var(--cd-space-4); } .buckets { grid-template-columns: 1fr; gap: var(--cd-space-3); } .buckets > div { display: flex; justify-content: space-between; align-items: baseline; gap: var(--cd-space-2); } .buckets dd { font-size: var(--cd-text-xl); } .caseRow { grid-template-columns: minmax(0,1fr); gap: var(--cd-space-4); } .caseAmounts { padding-top: var(--cd-space-3); border-top: 1px solid var(--cd-color-rule); } .next { display: grid; gap: var(--cd-space-1); } }

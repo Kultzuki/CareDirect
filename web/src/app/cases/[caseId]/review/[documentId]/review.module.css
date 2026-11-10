@@ -1,0 +1,199 @@
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--cd-space-5);
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-4);
+  min-width: 0;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-4);
+}
+
+/* The decision panel is the one lifted surface on the page. */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-3);
+  padding: var(--cd-space-5);
+  border: 1px solid var(--cd-color-ink);
+  border-radius: var(--cd-radius-surface);
+  background: var(--cd-color-sheet);
+  box-shadow: var(--cd-shadow-lift);
+}
+
+.blockers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-2);
+  padding-left: 1.25rem;
+  color: var(--cd-prov-review-fg);
+  font-weight: var(--cd-weight-strong);
+}
+
+.unsaved {
+  font-weight: var(--cd-weight-strong);
+  color: var(--cd-prov-corrected-fg);
+}
+
+.editAll {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cd-space-3);
+  padding: var(--cd-space-3) var(--cd-space-4);
+  border: 1px solid var(--cd-color-rule);
+  border-radius: var(--cd-radius-control);
+  background: var(--cd-color-sheet);
+  font-weight: var(--cd-weight-strong);
+  cursor: pointer;
+}
+
+.editAll input {
+  margin-top: 0.1rem;
+}
+
+.editAllHint {
+  display: block;
+  max-width: var(--cd-measure);
+  font-size: var(--cd-text-sm);
+  font-weight: var(--cd-weight-regular);
+  color: var(--cd-color-ink-muted);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: var(--cd-space-3);
+  padding-top: var(--cd-space-2);
+}
+
+.controls[hidden] {
+  display: none;
+}
+
+.confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cd-space-2);
+  min-height: 2.5rem;
+  font-weight: var(--cd-weight-strong);
+  cursor: pointer;
+}
+
+.source {
+  display: grid;
+  grid-template-columns: minmax(0, 6rem) minmax(0, 1fr);
+  gap: var(--cd-space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.saveBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-3);
+  padding: var(--cd-space-5);
+  border: 1px solid var(--cd-color-rule);
+  border-radius: var(--cd-radius-surface);
+  background: var(--cd-color-sheet);
+}
+
+.helper {
+  max-width: var(--cd-measure);
+  color: var(--cd-color-ink-muted);
+  font-size: var(--cd-text-sm);
+}
+
+.saveRow {
+  display: flex;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-3);
+  padding: var(--cd-space-4) var(--cd-space-5);
+  border: 1px solid var(--cd-color-rule);
+  border-radius: var(--cd-radius-surface);
+  background: var(--cd-color-sheet);
+}
+
+.history summary {
+  font-weight: var(--cd-weight-strong);
+  cursor: pointer;
+}
+
+.revisions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-3);
+  margin: var(--cd-space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revisions li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-1);
+  padding-left: var(--cd-space-3);
+  border-left: 3px solid var(--cd-prov-corrected-fg);
+}
+
+.meta {
+  color: var(--cd-color-ink-muted);
+  font-size: var(--cd-text-sm);
+}
+
+.promotedMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cd-space-4);
+  min-width: 0;
+}
+
+.skeleton {
+  height: 2rem;
+  max-width: 24rem;
+  border-radius: var(--cd-radius-control);
+  background: var(--cd-color-sheet-sunk);
+}
+.evidenceDesk { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr); gap:1.25rem; align-items:start; }
+.evidenceDesk > section { position:sticky; top:1rem; }
+.reviewStack { display:grid; gap:1rem; min-width:0; }
+.evidenceDesk .workspace { grid-template-columns:minmax(0,1fr); }
+.evidenceDesk .panel { position:static; box-shadow:none; border-color:var(--cd-color-rule); }
+@media(max-width:1100px) { .evidenceDesk { grid-template-columns:minmax(0,1fr); } .evidenceDesk > section { position:static; } }
+
+@media (min-width: 64rem) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 21rem;
+    gap: var(--cd-space-6);
+  }
+
+  .panel {
+    position: sticky;
+    top: var(--cd-space-4);
+  }
+}
+
+@media (max-width: 34rem) {
+  .panel,
+  .saveBar {
+    padding: var(--cd-space-4);
+  }
+
+  .saveRow > * {
+    width: 100%;
+  }
+}

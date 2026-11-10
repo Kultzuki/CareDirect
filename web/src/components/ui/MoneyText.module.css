@@ -1,0 +1,12 @@
+.money {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--cd-weight-strong);
+  white-space: nowrap;
+}
+
+.money[data-size="lg"] {
+  font-size: var(--cd-text-2xl);
+  font-weight: var(--cd-weight-heading);
+  letter-spacing: -0.015em;
+  line-height: var(--cd-leading-tight);
+}

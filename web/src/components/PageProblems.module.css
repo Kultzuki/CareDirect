@@ -1,0 +1,8 @@
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--cd-space-2);
+  margin-bottom: var(--cd-space-4);
+  color: var(--cd-color-ink-muted);
+  font-size: var(--cd-text-sm);
+}

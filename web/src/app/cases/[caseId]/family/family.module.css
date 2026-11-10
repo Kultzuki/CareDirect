@@ -1,0 +1,21 @@
+.page { width:100%; max-width:none; margin:0; padding:0; display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem; }
+.page > * { min-width: 0; }
+.form { display: grid; gap: .75rem; padding: 1rem 0; }
+.form label { display: grid; gap: .4rem; }
+.form input, .form select, .form textarea { min-width: 0; max-width: 100%; min-height: 2.75rem; padding: .65rem; font: inherit; color: var(--cd-color-ink); background: var(--cd-color-sheet); border: 1px solid var(--cd-color-edge); border-radius: var(--cd-radius-control, 6px); }
+.form input[type=checkbox] { min-height: auto; width: 1.2rem; height: 1.2rem; }
+.form label:has(input[type=checkbox]) { display: flex; align-items: center; gap: .6rem; }
+.form fieldset { padding: 1rem; border: 1px solid var(--cd-color-edge); display: grid; gap: .6rem; }
+.scroll { max-width: 100%; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--cd-color-rule); padding: 1rem; }
+.table td { font-variant-numeric: tabular-nums; }
+.table caption { text-align: left; padding: .75rem 0; }
+.table thead th { background:var(--cd-color-sheet-sunk); font-size:.82rem; }
+.table tbody th { font-weight:650; }
+.table td { font-size:.9rem; }
+.entry { border-left: 2px solid var(--cd-color-rule); padding: .5rem 1rem; margin: .75rem 0; overflow-wrap: anywhere; }
+.invitation { padding: 1rem; border: 1px solid var(--cd-color-edge); overflow-wrap: anywhere; }
+.total { font-size: var(--cd-text-xl); }
+.muted { color: var(--cd-color-ink-muted); }
+@media(max-width:40rem) { .page { padding:0; } .table td,.table th { padding:.65rem; } }

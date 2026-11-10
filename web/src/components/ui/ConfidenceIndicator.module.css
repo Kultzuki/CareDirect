@@ -1,0 +1,54 @@
+.confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cd-space-2);
+  font-size: var(--cd-text-sm);
+  color: var(--cd-color-ink-muted);
+}
+
+.track {
+  position: relative;
+  width: 3.5rem;
+  height: 0.375rem;
+  flex: none;
+  overflow: hidden;
+  border-radius: var(--cd-radius-pill);
+  background: var(--cd-color-rule);
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cd-color-ink-muted);
+}
+
+.figure {
+  font-weight: var(--cd-weight-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.confidence[data-emphasis] {
+  color: var(--cd-prov-review-fg);
+}
+
+.confidence[data-emphasis] .fill {
+  background: var(--cd-prov-review-rule);
+}
+
+.confidence[data-emphasis] .figure {
+  text-decoration: underline;
+  text-decoration-color: var(--cd-prov-review-rule);
+  text-decoration-thickness: 0.15em;
+  text-underline-offset: 0.2em;
+}
+
+@media (forced-colors: active) {
+  .track {
+    border: 1px solid CanvasText;
+  }
+
+  .fill {
+    background: CanvasText;
+  }
+}

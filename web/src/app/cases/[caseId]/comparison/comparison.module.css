@@ -1,0 +1,26 @@
+.page { width:100%; max-width:none; margin:0; padding:0; display:grid; grid-template-columns:minmax(0,1fr); gap:1.25rem; }
+.page > * { min-width: 0; }
+.form { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; margin-bottom: 1rem; }
+.form label { display: grid; min-width: 0; gap: .5rem; flex: 1 1 18rem; }
+.form select { width: 100%; padding: .75rem; border: 1px solid var(--cd-color-edge); border-radius: .4rem; background: var(--cd-color-sheet); color: var(--cd-color-ink); font: inherit; }
+.summary { font-size: var(--cd-text-lg); max-width: 68ch; }
+.warnings { padding: 1rem 2rem; background: var(--cd-feedback-warning-bg); color: var(--cd-feedback-warning-fg); }
+.totals { display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 1rem 0; }
+.totals dd { margin: .5rem 0 0; font-size: var(--cd-text-xl); }
+.scroll { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align:left; vertical-align:top; border-bottom:1px solid var(--cd-color-rule); padding:.8rem 1rem; font-size:.88rem; }
+.table thead th { background:var(--cd-color-sheet-sunk); font-weight:650; position:sticky; top:0; }
+.table tbody tr:hover { background:var(--cd-feedback-info-bg); }
+.table td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.table th:first-child { min-width: 18rem; }
+.table summary, .page details > summary { cursor: pointer; }
+.changes { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .75rem 0 0; font-size: var(--cd-text-sm); font-weight: normal; }
+.changes li { padding: .2rem .5rem; background: var(--cd-prov-review-bg); color: var(--cd-prov-review-fg); border-radius: .3rem; }
+.evidence { margin-top: 1rem; font-weight: normal; }
+.sources { padding-left: 1.25rem; overflow-wrap: anywhere; font-size: var(--cd-text-sm); }
+.sources li { margin-bottom: .75rem; }
+.sources q { display: block; font-family: var(--cd-font-paper); }
+.line { border-left: 2px solid var(--cd-color-rule); padding-left: .75rem; }
+.limitations { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); }
+@media (max-width:40rem) { .page { padding:0; } .table th,.table td { padding:.75rem; } }

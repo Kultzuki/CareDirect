@@ -1,0 +1,4 @@
+.bar { border-bottom: 1px solid var(--cd-color-rule); padding: .75rem var(--cd-space-6); background: var(--cd-color-sheet); }
+.bar form { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.bar select { width: auto; flex: 0 1 22rem; max-width: 100%; min-height: 2.75rem; padding: .5rem; font: inherit; }
+.bar span { color: var(--cd-color-ink-muted); font-size: var(--cd-text-sm); }

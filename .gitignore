@@ -1,0 +1,63 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Patient/billing uploads and generated private evidence
+uploads/
+storage/
+private-data/
+medical-records/
+*.dcm
+*.dicom
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+
+# Node / Next.js
+node_modules/
+.next/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+/output/playwright/
+/.playwright-cli/
+/output/
+.turbo/
+dist/
+build/
+coverage/
+
+# Local databases and logs
+*.sqlite
+*.sqlite3
+*.db
+*.log
+logs/
+api-dev.*.txt
+*.out.txt
+*.err.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Claude Code local-only settings and personal instructions
+.claude/settings.local.json
+CLAUDE.local.md

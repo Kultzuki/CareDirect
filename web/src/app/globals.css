@@ -1,0 +1,177 @@
+@import "../styles/tokens.css";
+
+/* Base styles. Element selectors stay low-specificity (:where) so component CSS Modules always
+   win without needing !important. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cd-color-ground);
+  color: var(--cd-color-ink);
+  font-family: var(--cd-font-sans);
+  font-size: var(--cd-text-md);
+  font-weight: var(--cd-weight-regular);
+  line-height: var(--cd-leading-body);
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: var(--cd-width-page);
+  margin-inline: auto;
+  padding: var(--cd-space-6) var(--cd-gutter) var(--cd-space-8);
+}
+
+:where(h1, h2, h3, h4) {
+  margin: 0;
+  font-weight: var(--cd-weight-heading);
+  line-height: var(--cd-leading-tight);
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+:where(h1) {
+  font-size: var(--cd-text-3xl);
+}
+
+:where(h2) {
+  font-size: var(--cd-text-xl);
+}
+
+:where(h3) {
+  font-size: var(--cd-text-lg);
+}
+
+:where(h4) {
+  font-size: var(--cd-text-md);
+}
+
+:where(p, ul, ol, dl, figure, blockquote) {
+  margin: 0;
+}
+
+:where(p) {
+  max-width: var(--cd-measure);
+  text-wrap: pretty;
+}
+
+:where(a) {
+  color: var(--cd-color-action);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+:where(a:hover) {
+  color: var(--cd-color-action-hover);
+  text-decoration-thickness: 0.14em;
+}
+
+:where(:focus-visible) {
+  outline: var(--cd-focus-ring);
+  outline-offset: var(--cd-focus-offset);
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+/* Text-like controls share one look; sizes are touch-friendly (44px). */
+:where(
+    input:not([type="checkbox"], [type="radio"], [type="file"], [type="hidden"]),
+    select,
+    textarea
+  ) {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--cd-color-sheet);
+  border: 1.5px solid var(--cd-color-edge);
+  border-radius: var(--cd-radius-control);
+  line-height: 1.35;
+}
+
+:where(textarea) {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+:where(input[type="checkbox"], input[type="radio"]) {
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0;
+  accent-color: var(--cd-color-action);
+  flex: none;
+}
+
+:where(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--cd-feedback-error-fg);
+}
+
+:where(input:disabled, select:disabled, textarea:disabled) {
+  background: var(--cd-color-sheet-sunk);
+  color: var(--cd-color-ink-muted);
+}
+
+::selection {
+  background: var(--cd-prov-review-mark);
+  color: var(--cd-color-ink);
+}
+
+/* Utilities shared by every screen. */
+.cd-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cd-skip-link {
+  position: absolute;
+  top: var(--cd-space-2);
+  left: var(--cd-space-2);
+  z-index: 100;
+  padding: var(--cd-space-3) var(--cd-space-4);
+  background: var(--cd-color-ink);
+  color: var(--cd-color-ink-inverse);
+  font-weight: var(--cd-weight-strong);
+  border-radius: var(--cd-radius-control);
+  transform: translateY(-200%);
+}
+
+.cd-skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

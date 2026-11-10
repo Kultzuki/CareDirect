@@ -1,0 +1,23 @@
+.evidence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--cd-space-1) var(--cd-space-2);
+  max-width: none;
+  padding-left: var(--cd-space-3);
+  border-left: 2px solid var(--cd-color-edge);
+  font-size: var(--cd-text-sm);
+  color: var(--cd-color-ink-muted);
+}
+
+.page {
+  font-weight: var(--cd-weight-strong);
+  white-space: nowrap;
+}
+
+.quote {
+  font-family: var(--cd-font-paper);
+  line-height: var(--cd-leading-paper);
+  overflow-wrap: anywhere;
+  quotes: "\201C" "\201D";
+}
